@@ -107,6 +107,9 @@ public class Main {
             System.out.println("School age");
         }
     }
+    //anche se il codice che ho scritto funziona, sicuramente ho sbagliato ad usare l'operatore logico && dato che
+    // è un argomento della prossima lezione, ma non avrei saputo fare altrimenti, ho provato con l'espressione matematica
+    // di compreso, cioè x < employeeAge < y, ma mi dava errore
             //Write your if statement here
     
 }
