@@ -80,7 +80,7 @@ public class Main {
         //setting the type of meal and its weight
         String meal = "soup";
          weight = 10; //in questo modo la scritta weight nello scope usciva in grigio, avevo cambiato nome
-                     // credendo fosse un'errore invece ti dice solo che potrebbe diventare una variabile locale
+                     // credendo fosse un errore, invece ti dice solo che potrebbe diventare una variabile locale
         //calculating score based on the type of meal
         if (meal.contains("sandwich")){
             yourMealScore = 5 * weight;
