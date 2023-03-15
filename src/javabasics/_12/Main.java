@@ -79,21 +79,20 @@ public class Main {
         // Start your code here
         //setting the type of meal and its weight
         String meal = "soup";
-        double mealWeight = 10;
+         weight = 10; //in questo modo la scritta weight nello scope usciva in grigio, avevo cambiato nome
+                     // credendo fosse un'errore invece ti dice solo che potrebbe diventare una variabile locale
         //calculating score based on the type of meal
         if (meal.contains("sandwich")){
-            yourMealScore = 5 * mealWeight;
+            yourMealScore = 5 * weight;
         } else if(meal.contains("soup")){
-            yourMealScore = 3 * mealWeight;
+            yourMealScore = 3 * weight;
         } else {
             System.out.println("meal type not supported");
         }
         //if a score is lower than 5, increase it to 5
         if (yourMealScore < 5){
             yourMealScore = 5;
-        } else {
-            yourMealScore = yourMealScore;
-        }
+        } //qui è stata una defaillance, nell'esercizio 1 in situazioni simili non ho commesso questo errore :)
         // End it here
 
         System.out.print("Expected score=" + expectedScore +", actual score=" + yourMealScore);
