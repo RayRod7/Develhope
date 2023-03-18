@@ -34,6 +34,8 @@ public class Main {
         numbers.remove(0);
         numbers.remove(0);
 
+
+
         System.out.println(numbers);
 
     //Write your code here

@@ -90,7 +90,7 @@ public class Main {
      * A2: for each
      *
      * Q3: We want to print out the first 80 customer names from our bank database
-     * A3: for i
+     * A3: for i1
      *
      * Q4: We want to read a file 100 lines at a time, without loading the full file into our program
      * A4: for i
