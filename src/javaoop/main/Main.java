@@ -1,2 +1,4 @@
-package javaoop.main;public class Main {
+package javaoop.main;
+
+public class Main {
 }

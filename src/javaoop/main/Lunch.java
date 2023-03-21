@@ -1,2 +1,4 @@
-package javaoop.main;public class Lunch {
+package javaoop.main;
+
+public class Lunch {
 }
