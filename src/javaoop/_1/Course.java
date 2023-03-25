@@ -1,4 +1,4 @@
-package javaoop.exercises._1;
+package javaoop._1;
 
 public class Course {
     String courseName = "";

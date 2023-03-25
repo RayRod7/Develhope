@@ -1,4 +1,4 @@
-package javaoop.exercises._1;
+package javaoop._1;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,7 +1,5 @@
-package javaoop.exercises._2;
+package javaoop._2;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
