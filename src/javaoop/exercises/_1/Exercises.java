@@ -41,7 +41,7 @@ public class Exercises {
         // Use a for i loop
     }
 
-    private static Student createNewStudent(String name, Integer age) {
+    public static Student createNewStudent(String name, Integer age) {
         Student student = new Student();
 
         student.name = name;
@@ -79,7 +79,6 @@ public class Exercises {
 
         int numberOfStudents = students.size();
         double averageAge = ageSum / numberOfStudents;
-        //printing averageAge
         System.out.println("Average students age: " + averageAge);
             // Write your code here
 
