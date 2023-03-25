@@ -47,7 +47,7 @@ public class Exercises {
 
 
         student2.setAge(17);
-        System.out.println(student2.getAge());
+        //System.out.println(student2.getAge());
 
         student2.setHeightInCm(1.95);
         System.out.println(student2.getHeightInCm());

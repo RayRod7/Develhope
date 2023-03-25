@@ -1,11 +1,11 @@
 package javaoop.exercises._3;
 
 public class Student {
-   private String name;
-   private int age;
-   private String gender;
-   private String hairColor;
-   private double heightInCm;
+    private String name;
+    private int age;
+    private String gender;
+    private String hairColor;
+    private double heightInCm;
 
     public Student(String name, int age, String gender, String hairColor, double heightInCm) {
         this.name = name;
@@ -20,10 +20,11 @@ public class Student {
     }
 
     public void setName(String name) {
-        if (name.length() < 2){
+        if (name.length() < 2) {
             System.out.println("Invalid name");
+        } else {
+            this.name = name;
         }
-        this.name = name;
     }
 
     public int getAge() {
@@ -31,10 +32,11 @@ public class Student {
     }
 
     public void setAge(int age) {
-        if (age < 0){
+        if (age < 18) {
             System.out.println("Invalid age");
-        }
+        } else {
             this.age = age;
+        }
     }
 
     public String getGender() {
@@ -58,10 +60,11 @@ public class Student {
     }
 
     public void setHeightInCm(double heightInCm) {
-        if (heightInCm > 1.90){
+        if (heightInCm > 1.90) {
             System.out.println("You could be a basket player!");
+        } else {
+            this.heightInCm = heightInCm;
         }
-        this.heightInCm = heightInCm;
     }
 
 }
