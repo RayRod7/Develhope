@@ -11,14 +11,14 @@ public class Exercises {
         exercise3();
         exercise4();
     }
-
+/*
     /**
      * 1: Create variables with the MINIMUM POSSIBLE scope for currentCount and totalCount (both ints)
      */
     public static void exercise1() {
         System.out.println("Exercise 1:");
 
-        int currentCount = 0;  //currentCount = lucky rolls (?)
+        int luckyRolls = 0;  //currentCount = lucky rolls (?)
         int totalCount = 0;
 
         for (int i = 0; i < 100; i++) {
@@ -35,6 +35,7 @@ public class Exercises {
     private static int rollD6() {
         return random.nextInt(6) + 1;
     }
+
 
 
     /**

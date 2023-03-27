@@ -7,6 +7,7 @@ public class Student {
     private String hairColor;
     private double heightInCm;
 
+
     public Student(String name, int age, String gender, String hairColor, double heightInCm) {
         this.name = name;
         this.age = age;
@@ -48,7 +49,13 @@ public class Student {
     }
 
     public String getHairColor() {
-        return hairColor;
+
+        if (hairColor.equals("bald") || hairColor.equals("no hairs")) {
+            System.out.println("Bald, no hair color needed (neither an hairdryer)");
+        } else {
+            return hairColor;
+        }
+        return null;
     }
 
     public void setHairColor(String hairColor) {

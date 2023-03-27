@@ -55,6 +55,9 @@ public class Exercises {
         student2.setName("R");
         System.out.println(student2.getName());
 
+        student2.setHairColor("pelato");
+        System.out.println(student2.getHairColor());
+
         //Write your code here
     }
 
