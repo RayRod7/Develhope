@@ -1,6 +1,9 @@
 package javaadvanced._1;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Exercises {
 
@@ -9,6 +12,7 @@ public class Exercises {
         exercise2();
         exercise3();
         exercise4();
+
     }
 
     /**
@@ -29,6 +33,11 @@ public class Exercises {
         ourSet.add(5);
         ourSet.add(1);
         // Your code
+        for (int i = 0; i < 100; i++) {
+            int value = Integer.valueOf((int) (Math.random() * 100));
+            System.out.println("indice: " + i + " valore: " + value);
+            ourSet.add(value);
+        }
 
         /*
         if (ourSet.containsAll(Set.of(1, 1, 5, 2, 1))) {
@@ -38,7 +47,7 @@ public class Exercises {
         }
         */
 
-        System.out.println(ourSet); // perchè me lo stampa in ordine crescente?
+        System.out.println(ourSet);
 
         // Remove the element '1'
         ourSet.remove(1);
@@ -69,15 +78,15 @@ public class Exercises {
 
         fruitsSet.addAll(fruitsSet);
 
-        //2a. What will this output? [Write your guesses in here]
+        //2a. What will this output? [it will print the strings we added in random order]
 
-        System.out.println("2a: "+fruitsSet);
+        System.out.println("2a: " + fruitsSet);
 
         List<String> fruitsList = List.of("apple", "banana", "grapes", "pear", "mango");
 
         fruitsSet.addAll(fruitsList);
 
-        //2b. What will this output? [Write your guesses in here]
+        //2b. What will this output? [it will print the strings we added and fruitsList in random order, without duplicates]
         System.out.println("2b: " + fruitsSet);
     }
 
@@ -94,12 +103,12 @@ public class Exercises {
 
 
         for (Integer number : numbers) {
-        if (number > max){
-            max = number;
-        }
-        if (number < min){
-            min = number;
-        }
+            if (number > max) {
+                max = number;
+            }
+            if (number < min) {
+                min = number;
+            }
             // Your code
         }
 
@@ -110,21 +119,20 @@ public class Exercises {
         }
 
 
-
         // 3b. Find which items from set a are also in set b, add these to itemsContainedInBothSets
         //     use the `contains` method and "nested" for loop
         Set<Integer> setA = Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         Set<Integer> setB = Set.of(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         Set<Integer> itemsContainedInBothSets = new HashSet<>();
 
-        for (Integer indexA : setA){
-            if (setB.contains(indexA)){
+        for (Integer indexA : setA) {
+            if (setB.contains(indexA)) {
                 itemsContainedInBothSets.add(indexA);
             }
-            for (Integer indexB : setB){
-                if (setA.contains(indexB)){
+            for (Integer indexB : setB) {
+                if (setA.contains(indexB)) {
                     itemsContainedInBothSets.add(indexB);
-                };
+                }
             }
         }
         // Your code
@@ -148,10 +156,10 @@ public class Exercises {
         //     you can use `break;` to exit the loop once you've found it!
         //int min = Integer.MAX_VALUE;
 
-        //commento la riga 149 per poter impoostare il valore di min direttamente quando dichiaro la variabile
-        // inizialmente avevo scritto così: int min = orderedNumbers.first(); ma mi dava errore perchè alla riga 145 è
+        //commento la riga 155 per poter impostare il valore di min direttamente quando dichiaro la variabile
+        // inizialmente avevo scritto così: int min = orderedNumbers.first(); ma mi dava errore perchè il nostro è
         // Set<Integer>... e non TreeSet<Integer>...
-        //ma passando il mouse sull'errore mi suggerisce di fare il ast come di seguito:
+        //ma passando il mouse sull'errore mi suggerisce di fare il cast come di seguito:
 
         int min = ((TreeSet<Integer>) orderedNumbers).first();
 
@@ -164,5 +172,7 @@ public class Exercises {
             System.out.println("4a. Correct min value");
         }
     }
+
+
 }
 
