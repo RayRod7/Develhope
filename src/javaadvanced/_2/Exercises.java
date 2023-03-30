@@ -1,4 +1,4 @@
-package javaadvanced._2;
+package src.javaadvanced._2;
 
 import java.util.HashMap;
 import java.util.Map;

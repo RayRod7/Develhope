@@ -147,7 +147,7 @@ public class Exercises {
 
     /**
      * 4: BONUS! This is an optional task, but it is recommended you complete it
-     * ----------------------------------------------------------------------
+     * -----------------------------------------------------------------------
      */
     private static void exercise4() {
         Set<Integer> orderedNumbers = new TreeSet<>();
