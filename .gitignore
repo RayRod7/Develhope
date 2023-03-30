@@ -3,5 +3,7 @@
 /workspace.xml
 /out/
 /.idea/
+/idea/
 .out/
 *.iml/
+.idea
