@@ -1,4 +1,4 @@
-package javaadvanced._1;
+package src.javaadvanced._1;
 
 import java.util.HashSet;
 import java.util.List;
@@ -97,16 +97,17 @@ public class Exercises {
         // 3a. Find the min and max values in the Set below
         Set<Integer> numbers = Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        //Qua credo sia sbagliata la traccia
-        int min = Integer.MAX_VALUE; // Traccia originale: int max = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE; //                    int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE; //
+        int min = Integer.MIN_VALUE; //
 
 
         for (Integer number : numbers) {
-            if (number > max) {
+            if (number > max || max == Integer.MAX_VALUE) {
                 max = number;
             }
-            if (number < min) {
+        }
+        for (Integer number : numbers) {
+            if (number < min || min == Integer.MIN_VALUE) {
                 min = number;
             }
             // Your code
@@ -115,9 +116,8 @@ public class Exercises {
         if (max != 10 || min != 1) {
             System.out.println("3a. Incorrect min or max values");
         } else {
-            System.out.println("3a. Correct values"); //aggiunto per stampare qualcosa quando il risultato è corretto
+            System.out.println("3a. Correct min or max values"); //aggiunto per stampare qualcosa quando il risultato è corretto
         }
-
 
         // 3b. Find which items from set a are also in set b, add these to itemsContainedInBothSets
         //     use the `contains` method and "nested" for loop
