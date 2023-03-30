@@ -15,6 +15,8 @@ public class Main {
     public static void exercise1() {
         System.out.println("Exercise 1: ");
         System.out.println("Hello Ray!"); //<--- Edit this line
+
+
     }
 
     /**
