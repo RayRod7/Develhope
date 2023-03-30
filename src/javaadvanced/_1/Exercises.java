@@ -27,19 +27,14 @@ public class Exercises {
         Set<Integer> ourSet = new HashSet<>();
 
         // Add some numbers using the add method
-        ourSet.add(1);//ourSet.add(8);
+        ourSet.add(1);
         ourSet.add(1);
         ourSet.add(2);
         ourSet.add(5);
         ourSet.add(1);
         // Your code
-        for (int i = 0; i < 100; i++) {
-            int value = Integer.valueOf((int) (Math.random() * 100));
-            System.out.println("indice: " + i + " valore: " + value);
-            ourSet.add(value);
-        }
 
-        /*
+        /* //scoppia tutto perchè set.of è un set immodificabile
         if (ourSet.containsAll(Set.of(1, 1, 5, 2, 1))) {
             System.out.println("1a. Set contains all numbers");
         } else {
@@ -78,7 +73,7 @@ public class Exercises {
 
         fruitsSet.addAll(fruitsSet);
 
-        //2a. What will this output? [it will print the strings we added in random order]
+        //2a. What will this output? [it will print the strings we added in random order, without duplicates]
 
         System.out.println("2a: " + fruitsSet);
 
@@ -97,21 +92,40 @@ public class Exercises {
         // 3a. Find the min and max values in the Set below
         Set<Integer> numbers = Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        int max = Integer.MAX_VALUE; //
-        int min = Integer.MIN_VALUE; //
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
 
 
         for (Integer number : numbers) {
             if (number > max || max == Integer.MAX_VALUE) {
                 max = number;
             }
-        }
-        for (Integer number : numbers) {
             if (number < min || min == Integer.MIN_VALUE) {
                 min = number;
             }
-            // Your code
         }
+        // Your code
+/*
+           Prima del pair programming ero conivinto che fosse sbagliata la traccia e, per svolgre l'eserizio, avevo
+           invertito i valori come di seguito
+           Tuttavia ho ancora la sensazione che la traccia sia sbagliata perchè quando, nella versione non commentata,
+           imposto la condition dell' if 'number > max || max == Integer.MAX_VALUE' sto praticamente "mettendo
+           una pezza" al fatto che a max sia assegnato il valore Integer.MAX_VALUE invece di Integer.MIN_VALUE
+
+
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+         for (Integer number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+            if (number < min) {
+                min = number;
+            }
+        }
+         // Your code
+
+*/
 
         if (max != 10 || min != 1) {
             System.out.println("3a. Incorrect min or max values");
@@ -154,14 +168,17 @@ public class Exercises {
         orderedNumbers.addAll(Set.of(5, 3, 1, 2, 4, 6, 7, 8, 9, 10));
         // 4a. Find the min value in the TreeSet with as few loops as possible,
         //     you can use `break;` to exit the loop once you've found it!
-        //int min = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
 
-        //commento la riga 155 per poter impostare il valore di min direttamente quando dichiaro la variabile
-        // inizialmente avevo scritto così: int min = orderedNumbers.first(); ma mi dava errore perchè il nostro è
-        // Set<Integer>... e non TreeSet<Integer>...
-        //ma passando il mouse sull'errore mi suggerisce di fare il cast come di seguito:
+        //Visto che mi chiede il minor numero di loop possibile ho fatto così:
+        for (int num : orderedNumbers) {
+            if (num < min) {
+                min = num;
+            }
+        }
 
-        int min = ((TreeSet<Integer>) orderedNumbers).first();
+        // Ma se mi avesse chiesto il modo più efficiente per farlo, avrei fatto così:
+        //int min = ((TreeSet<Integer>) orderedNumbers).first();
 
 
         // Your code
