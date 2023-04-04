@@ -1,4 +1,4 @@
-package javaoop._3;
+package src.javaoop._3;
 
 public class Student {
     private String name;
@@ -6,6 +6,7 @@ public class Student {
     private String gender;
     private String hairColor;
     private double heightInCm;
+    private int studentCounter;
 
 
     public Student(String name, int age, String gender, String hairColor, double heightInCm) {
@@ -17,6 +18,7 @@ public class Student {
     }
 
     public String getName() {
+        studentCounter++;
         return name;
     }
 
@@ -74,6 +76,12 @@ public class Student {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "gender='" + gender + '\'' +
+                '}';
+    }
 }
 
 

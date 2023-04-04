@@ -1,4 +1,4 @@
-package javaoop._4;
+package src.javaoop._4;
 
 
 public class ExerciseLunch {

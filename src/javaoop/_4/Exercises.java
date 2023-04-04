@@ -1,4 +1,4 @@
-package javaoop._4;
+package src.javaoop._4;
 
 import java.util.Random;
 
@@ -24,6 +24,7 @@ public class Exercises {
         for (int i = 0; i < 100; i++) {
             while (rollD6() == 6) {
                 luckyRolls++;
+
             }
             totalCount += luckyRolls;
             luckyRolls = 0;
