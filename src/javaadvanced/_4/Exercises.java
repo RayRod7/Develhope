@@ -36,6 +36,7 @@ public class Exercises {
             Files.createFile(MY_PATH);
             //method that writes myString to a file
             stringToFileAdder(myString);
+           
 
             // Your code here
         } catch (Exception exception) {
@@ -47,6 +48,7 @@ public class Exercises {
 
     private static void stringToFileAdder(String myString) throws IOException {
         Files.writeString(MY_PATH, myString);
+
         System.out.println("File created and mySting wrote into it");
     }
 
@@ -96,7 +98,7 @@ public class Exercises {
 
     private static void fileLinesCounter(int linesCount) throws IOException {
         List<String> filecontentAsList = Files.readAllLines(MY_PATH);
-        for (String line : filecontentAsList){
+        for (String line : filecontentAsList) {
             linesCount++;
         }
         System.out.println("The number of lines in our file is: " + linesCount);
@@ -106,9 +108,8 @@ public class Exercises {
     /**
      * 4:
      * Write a method that reads a file and returns the number of words in the file
-     *
+     * <p>
      * Then deletes the previous file with Files.delete() use inside the try block
-     *
      */
     private static void exercise4() {
         System.out.println("\nExercise 4: ");
@@ -132,7 +133,7 @@ public class Exercises {
     private static void fileWordCounter(int wordsCount) throws IOException {
         String contentAsString = Files.readString(MY_PATH);
         for (String word : contentAsString.split(" ")) {
-                wordsCount++;
+            wordsCount++;
         }
         System.out.println("The number of words is: " + wordsCount);
     }
