@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Exercises {
     public static void main(String[] args) {
-        //exercise1();
-        //exercise2();
-        //exercise3();
-        //exercise4();
+        exercise1();
+        exercise2();
+        exercise3();
+        exercise4();
         exercise5();
     }
 

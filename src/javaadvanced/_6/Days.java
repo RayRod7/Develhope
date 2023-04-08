@@ -18,4 +18,5 @@ public enum Days {
     public boolean isWeekend() {
         return isWeekend;
     }
+    
 }
