@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        exercise1();
-        exercise2();
-        exercise3();
+        //exercise1();
+        //exercise2();
+        //exercise3();
         exercise4();
     }
 
@@ -80,13 +80,18 @@ public class Exercises {
      */
     private static void exercise4() {
         System.out.println("\nExercise 4: ");
-
+        //Dividing a Double for 0.0 do not throw Artmetic Exception unless you do such as the if statement as the one at line 91
         // Your code here
 
         Double num1 = 10.0;
-        String num2AsString = "ciao";
+        String num2AsString = "0.0";
+        Double division = num1 / Double.parseDouble(num2AsString);
+
         try {
-            System.out.println(num1 / Double.parseDouble(num2AsString));
+            if (division == Double.POSITIVE_INFINITY || division == Double.NEGATIVE_INFINITY) {
+                throw new ArithmeticException();
+            }
+            System.out.println(division);
         } catch (ArithmeticException e) {
             System.out.println("Aritmetic Exception");
         } catch (NumberFormatException e) {
@@ -96,19 +101,7 @@ public class Exercises {
 
     }
 }
- /*
-        //Dividing a Double for 0.0 not throws Artmetic Exception in fact the results could be:
-         - Infinity (or -Infinity) when a number is divided by 0.0
-         - NaN if we divide 0.0 by 0.0 (0.0/0.0)
 
-       //Here the same code but Integer instead of Double, this way Artmetic Exception can be thrown
-        int num1 = 10;
-        String num2AsString = "0";
-        try{
-            System.out.println(num1/Integer.parseInt(num2AsString));
-        } catch (ArithmeticException e) {
-            System.out.println("Aritmetic Exception");
-        } catch (NumberFormatException e) {
-            System.out.println("The string does not have the appropriate format to be converted");
-        }
-         */
+
+
+
