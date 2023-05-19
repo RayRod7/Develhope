@@ -1,0 +1,58 @@
+#|---------------------------------------------------------|
+#Esercizio 8:
+
+select * from INGREDIENT;
+
+alter table INGREDIENT
+add constraint UNIQUE(NAME);
+
+alter table INGREDIENT
+modify CONTAINS_LACTOSE BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGETARIAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify GLUTEN_FREE BOOLEAN not NULL;
+
+#|---------------------------------------------------------|
+#- Esercizio 9:
+
+CREATE TABLE CUSTOMERS (
+ CUSTOMER_ID INT AUTO_INCREMENT,
+ NAME VARCHAR(255) NOT NULL,
+ SURNAME VARCHAR(255) NOT NULL,
+ AGE INT NOT NULL,
+ PRIMARY KEY (CUSTOMER_ID)
+);
+
+INSERT INTO CUSTOMERS (NAME, SURNAME, AGE)
+VALUES ('Mario', 'Rossi', 30 );
+
+INSERT INTO CUSTOMERS (NAME, SURNAME, AGE)
+VALUES ('Luca', 'Verdi', 32);
+
+UPDATE CUSTOMERS
+SET AGE = 31
+WHERE CUSTOMER_ID = 1;
+
+UPDATE CUSTOMERS
+SET AGE = 33
+WHERE CUSTOMER_ID = 2;
+
+DELETE FROM CUSTOMERS
+WHERE CUSTOMER_ID = 2;
+
+DELETE FROM CUSTOMERS
+WHERE CUSTOMER_ID = 1;
+
+TRUNCATE CUSTOMERS;
+# Question 6:  PRIMARY KEY (customer_id)
+# Question 7:  PRIMARY KEY (product_name)
+# Question 8:  PRIMARY KEY (order_id)
+# Question 9:  PRIMARY KEY (order_id)
+
+
