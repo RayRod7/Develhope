@@ -39,7 +39,7 @@ FROM INGREDIENT;
 
 SELECT
 CONCAT(PRICE, '€') AS PRICE,
- #Even there's nothing to trim
+ #Even there's nothing to trim.
 TRIM(MEAL_NAME) AS TRIMMED_MEAL_NAME,
 LENGTH(MEAL_NAME) AS MEAL_NAME_LENGTH,
 SUBSTRING(MEAL_NAME, 1, 2) AS FIRST_TWO_LETTER_OF_MEAL,
@@ -93,5 +93,25 @@ HAVING PRICE < (SELECT AVG(PRICE) FROM MEAL);
 SELECT * FROM MEAL
 WHERE PRICE < (SELECT AVG(PRICE) FROM MEAL)
 AND CALORIES > 600;
+
+#|---------------------------------------------------------|
+#Esercizio 8:
+
+select * from INGREDIENT;
+
+alter table INGREDIENT
+add constraint UNIQUE(NAME);
+
+alter table INGREDIENT
+modify CONTAINS_LACTOSE BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGETARIAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify GLUTEN_FREE BOOLEAN not NULL;
 
 #|---------------------------------------------------------|
