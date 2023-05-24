@@ -1,0 +1,16 @@
+select * from INGREDIENT;
+
+alter table INGREDIENT
+add constraint UNIQUE(NAME);
+
+alter table INGREDIENT
+modify CONTAINS_LACTOSE BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGETARIAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify VEGAN BOOLEAN not NULL;
+
+alter table INGREDIENT
+modify GLUTEN_FREE BOOLEAN not NULL;
