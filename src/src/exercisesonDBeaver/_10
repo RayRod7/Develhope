@@ -1,0 +1,70 @@
+select M.NAME
+from MEAL M
+inner join INGREDIENT I
+on M.MEAL_ID = I.MEAL_ID
+where I.NAME = 'Garlic';
+
+select COUNT(distinct M.NAME)
+as NUM_MEAL_VEGETARIAN_INGREDIENT
+from MEAL M
+inner join INGREDIENT I
+on M.MEAL_ID = I.MEAL_ID
+where I.VEGETARIAN = true;
+
+select M.NAME
+from MEAL M
+inner join INGREDIENT I
+on M.MEAL_ID = I.MEAL_ID
+where I.VEGAN = true and I.GLUTEN_FREE = true;
+
+select COUNT(I.NAME) / COUNT(distinct M.NAME)
+as AVERAGE_INGR_PER_MEAL
+from INGREDIENT I
+inner join MEAL M
+on M.MEAL_ID = I.MEAL_ID;
+
+select M.NAME
+from MEAL M
+inner join INGREDIENT I
+on M.MEAL_ID = I.MEAL_ID
+group by M.NAME
+having COUNT(I.NAME) > 3;
+
+
+#Using the following table definitions, write an inner join for the two tables
+CREATE TABLE CUSTOMER (
+    CUSTOMER_ID INT,
+    NAME VARCHAR(255),
+    ADDRESS VARCHAR(255)
+);
+CREATE TABLE ORDER (
+    ORDER_ID INT,
+    CUSTOMER_ID INT,
+    ORDER_DATE DATE,
+    TOTAL_COST DECIMAL(10,2)
+);
+
+select C.NAME, O.ORDER_ID
+from CUSTOMER C
+inner join MYORDER O
+on C.CUSTOMER_ID = O.CUSTOMER_ID
+where TOTAL_COST < 7;
+
+
+#Using the following table definitions, write an inner join for the two tables
+CREATE TABLE PRODUCT (
+    PRODUCT_ID INT,
+    NAME VARCHAR(255),
+    PRICE DECIMAL(10,2)
+);
+CREATE TABLE INVENTORY (
+    PRODUCT_ID INT,
+    STORE_ID INT,
+    QUANTITY INT
+);
+
+select P.NAME as PRODUCT_NAME, P.PRICE, I.QUANTITY
+from PRODUCT P
+inner join INVENTORY I
+on P.PRODUCT_ID = I.PRODUCT_ID
+where PRICE < 20.5 and QUANTITY > 3;
