@@ -1,0 +1,26 @@
+select *
+from ingredient i
+left join meal m
+on i.MEAL_ID = m.MEAL_ID;
+
+select *
+from meal m
+right join ingredient i
+on m.MEAL_ID = i.MEAL_ID;
+
+select *
+from meal m
+inner join ingredient i
+on m.MEAL_ID = i.MEAL_ID;
+
+select *
+from ingredient i
+left join meal m
+on i.MEAL_ID = m.MEAL_ID
+where m.MEAL_ID is null;
+
+select *
+from meal m
+right join ingredient i
+on m.MEAL_ID = i.MEAL_ID
+where m.MEAL_ID is null;
